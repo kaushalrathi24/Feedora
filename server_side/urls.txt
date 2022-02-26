@@ -1,0 +1,22 @@
+('Wion', 'Tech', 'https://www.wionews.com/feeds/science-technology/rss.xml')
+('Wion', 'Sports', 'https://www.wionews.com/feeds/sports/rss.xml')
+('Wion', 'Economy', 'https://www.wionews.com/feeds/business-economy/rss.xml')
+('Wion', 'Entertainment', 'https://www.wionews.com/feeds/entertainment/rss.xml')
+('Wion', 'World_News', 'https://www.wionews.com/feeds/world/rss.xml')
+('Wion', 'India_News', 'https://www.wionews.com/feeds/india-news/rss.xml')
+
+('TOI', 'Entertainment', 'https://timesofindia.indiatimes.com/rssfeeds/1081479906.cms')
+('TOI', 'Tech', 'https://timesofindia.indiatimes.com/rssfeeds/66949542.cms')
+('TOI', 'Health', 'https://timesofindia.indiatimes.com/rssfeeds/3908999.cms')
+('TOI', 'Sports', 'https://timesofindia.indiatimes.com/rssfeeds/4719148.cms')
+('TOI', 'Business', 'https://timesofindia.indiatimes.com/rssfeeds/1898055.cms')
+('TOI', 'World_news', 'https://timesofindia.indiatimes.com/rssfeeds/296589292.cms')
+('TOI', 'India_news', 'https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms')
+
+('The Hindu', 'World_news', 'https://www.thehindu.com/news/international/feeder/default.rss')
+('The Hindu', 'India_news', 'https://www.thehindu.com/news/national/feeder/default.rss')
+('The Hindu', 'Entertainment', 'https://www.thehindu.com/entertainment/feeder/default.rss')
+('The Hindu', 'Sports', 'https://www.thehindu.com/sport/feeder/default.rss')
+('The Hindu', 'Business', 'https://www.thehindu.com/business/feeder/default.rss')
+
+('NDTV', 'Sports', 'https://feeds.feedburner.com/ndtvsports-latest')

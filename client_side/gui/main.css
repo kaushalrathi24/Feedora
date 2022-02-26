@@ -1,0 +1,481 @@
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url('fonts/Montserrat-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: Montserrat-ExtraBold;
+    src: url('fonts/Montserrat-ExtraBold.ttf');
+  }
+
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url('fonts/Montserrat-Bold.ttf');
+  }
+
+  @-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+    cursor:default;
+}
+
+html {
+    background: url('images/bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+body{
+    width: inherit;
+    height: 100%;
+}
+
+.background{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0;
+    background-image: linear-gradient(#00c6fbe3, #005beae3);
+    overflow: auto;
+}
+
+.container{
+    height: 100%;
+    width: 390px;
+    perspective: 1000px;
+    margin: auto;
+    display: block;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition:  0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.container.flip .card{
+    transform: rotateY(180deg);
+}
+.login, .create_account{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40% 0 0 0;
+    margin: auto;
+}
+
+.login{
+    transform: rotateY(0deg);
+}
+
+
+.create_account{
+    transform: rotateY(180deg);
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.logo{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.login_text{
+    font-family: Montserrat-ExtraBold;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 6% 0 8% 0;
+}
+
+.input_form{
+    position: relative;
+    width: 100%;
+    cursor: text;
+}
+.input_text{
+    font-family: Montserrat-Bold;
+    width: 100%;
+    font-size: 15px;
+    color: #333333;
+    background: #fff;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 53px;
+    border: none;
+    margin-bottom: 2.5%;
+    opacity: 1;
+    cursor: text;
+}
+
+.login_button{
+    font-family: Montserrat-Bold;
+    width: 100%;
+    font-size: 15px;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    background-color: #333333;
+    text-align: center;
+    border: none;
+    color:#fff;
+    margin: 10% 0 4% 0;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+
+.login_button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.message{
+    font-family: Montserrat-Bold;
+    transition: all 1s;
+    font-size: 20px;
+    margin-bottom: 50%;
+    color:rgba(255, 255, 255, 0);
+
+}
+
+.flip_button{
+    font-family: Montserrat-Regular;
+    font-size: 16px;
+    color: #cccccc;
+    transition: all 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    padding-bottom: 5%;
+    position: fixed;
+    bottom: 1%;
+}
+
+.flip_button:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.symbol-input100 {
+    font-size: 15px;
+    color: grey;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    pointer-events: none;
+    transition: all 0.4s;
+    cursor: text;
+  }
+
+.input_text:focus + .symbol-input100{
+    color: #00c6fb;
+    padding-left: 23px;
+  }
+
+.space{
+    position: absolute;
+    bottom: 310px;
+    right: 50%;
+    margin: auto;
+    height: 1px;
+    width: 1px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1;
+    transition: all 0.8s;
+    visibility: hidden;
+}
+
+.space.reveal{
+    top: 310px;
+    left: 95px;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    border-radius: 8px;
+    visibility: visible;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.5);
+}
+.container.remove{
+    visibility: hidden;
+}
+
+
+h1{
+    font-family: Montserrat-Bold;
+    font-size: 60px;
+    color: #333333;
+    padding: 60px;
+    padding-bottom: 0%;
+    margin-left: 155px;
+}
+
+.selection{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: block;
+}
+
+.grid{
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+}
+
+.boxes{
+    height: 280px;
+    margin: 40px 30px 40px 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.boxes:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+.boxes > label{
+    height: inherit;
+    width: inherit;
+    bottom: 30px;
+}
+
+.placeholder{
+    height: 100%;
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-radius: 4px;
+}
+
+.input{
+    display: none;
+}
+
+.input:checked + label > .placeholder{
+    border: 5px solid  rgba(25,105,223, 0.9);
+}
+
+.selection_button{
+    font-family: Montserrat-Bold;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #333333;
+    cursor: pointer;
+    margin: 40px 0 20px 0;
+    color:#fff;
+    border: none;
+    font-size: 15px;
+    position: relative;
+    bottom: 140px;
+    left: 92%;
+    transition: all 0s;
+}
+
+.selection_button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#websites{
+    display: none;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+.space.reveal.main{
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    left: 10%;
+    height: 100%;
+    width: 90%;
+    border-radius: 0px;
+    visibility: visible;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.5);
+    display: block;
+    margin: 0;
+    padding: 0;
+    z-index: 4;
+}
+
+
+
+.tab{
+    height: 100%;
+    width: 10%;
+    background-color: rgba(51, 51, 51, 0);
+    z-index: 4;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.tab_button{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    border-radius: 0;
+    font-size: 25px;
+    font-family: Montserrat-Bold;
+    text-align: center;
+    border: none;
+    color: #fff;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+
+.tab_button:hover{
+    background-color: #333333;
+}
+
+#settings{
+    position: absolute;
+    bottom: 1%;
+    width: inherit;
+}
+
+.main_page{
+    display: none;
+    height: 100%;
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 65px;
+    overflow: auto;
+}
+
+.listing{
+    display: block;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #4d4d4d6c;
+    margin-bottom: 30px;
+}
+
+.head{
+    width: 99%;
+}
+
+.art_outlet{
+    float: right;
+    color: black;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+}
+
+.art_title{
+    color: black;
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+}
+
+.content{
+    display: inline;
+    font-family: Montserrat-Regular;
+}
+
+.art_link{
+    font-family: Montserrat-Regular;
+    cursor: pointer;
+}
+
+.refresh_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 15px;
+    font-family: Montserrat-Bold;
+    margin-bottom: 10px;
+}
+
+.refresh_button{
+    background-color: #333333;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.refresh_button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.settings_page{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    display: none;
+}
+
+.settings_button{
+    display: block;
+    text-decoration: none;
+    background: transparent;
+    border-bottom: 2px solid #cccccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Montserrat-Bold;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: all 0.5s;
+}
+
+.settings_button:hover{
+    background-color: #333333;
+    color: #fff;
+}

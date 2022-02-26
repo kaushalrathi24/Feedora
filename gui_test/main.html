@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Feedora</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="font_awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="container remove" id="container">
+            <div class="card" id="card">
+                <form class="login">
+                    <img src="images/logo.png" alt="logo" class="logo">
+                    <span class="login_text">Login</span>
+                    <div class="input_form">
+                        <input type="text" name="username" id="login_username" placeholder="Username" class="input_text"
+                            required>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    <div class="input_form">
+                        <input type="password" name="password" id="login_password" placeholder="Password"
+                            class="input_text" required>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    <button type="button" onclick="loginjs()" class="login_button">Login</button>
+                    <div class="message" id="incorrect_login">
+                        Incorrect Username or Password
+                    </div>
+                    <div onclick="flip()" class="flip_button">Create new account <i class="fa fa-long-arrow-right"></i>
+                    </div>
+                </form>
+                <form class="create_account">
+                    <img src="images/logo.png" alt="logo" class="logo">
+                    <span class="login_text">Create Account</span>
+                    <div class="input_form">
+                        <input type="text" name="username" placeholder="Username" class="input_text"
+                            id="create_username" required value="">
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    <div class="input_form">
+                        <input type="password" name="password" placeholder="Password" class="input_text"
+                            id="create_password" required value="">
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+                    <button onclick="createjs()" type="button" class="login_button">Create Account</button>
+                    <div class="message" id="incorrect_create">
+                        Username already taken
+                    </div>
+                    <div onclick="flip()" class="flip_button"> <i class="fa fa-long-arrow-left"></i> Login
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="space reveal" id="space">
+            <div class='selection' id="categories" style="display: block;">
+                <h1>Select Categories of Interest</h1>
+                <div class="grid">
+                    <div class="boxes">
+                        <input type="checkbox" id="tech_box" class="input" value="tech">
+                        <label for="tech_box"><img src="images/Categories/tech.jpg" alt="Tech"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="sports_box" class="input" value="sports">
+                        <label for="sports_box"><img src="images/Categories/sports.jpg" alt="Sports"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="world_news_box" class="input" value="world_news">
+                        <label for="world_news_box"><img src="images/Categories/world_news.jpg" alt="World News"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="india_news_box" class="input" value="india_news">
+                        <label for="india_news_box"><img src="images/Categories/india_news.jpg" alt="India News"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="entertainment_box" class="input" value="entertainment">
+                        <label for="entertainment_box"><img src="images/Categories/entertainment.jpg"
+                                alt="Entertainment" class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="health_box" class="input" value="health">
+                        <label for="health_box"><img src="images/Categories/health.jpg" alt="health"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="business_box" class="input" value="business" value="economy">
+                        <label for="business_box"><img src="images/Categories/business.jpg" alt="Business"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="economy_box" class="input" value="economy">
+                        <label for="economy_box"><img src="images/Categories/economy.jpg" alt="Economy"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="coming_soon" class="placeholder">
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="coming_soon" class="placeholder">
+                    </div>
+                </div>
+                <button type="button" onclick="next()" class="selection_button"><i
+                        class="fa fa-long-arrow-right"></i></button>
+            </div>
+
+            <div class='selection' id="websites">
+                <h1>Select Websites for you feed</h1>
+                <div class="grid">
+                    <div class="boxes">
+                        <input type="checkbox" id="verge_box" class="input" value="verge">
+                        <label for="verge_box"><img src="images/Websites/verge.jpg" alt="The Verge"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="toi_box" class="input" value="toi">
+                        <label for="toi_box"><img src="images/Websites/toi.jpg" alt="TOI" class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="bbc_box" class="input" value="bbc">
+                        <label for="bbc_box"><img src="images/Websites/bbc.jpg" alt="BBC" class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="ndtv_box" class="input" value="ndtv">
+                        <label for="ndtv_box"><img src="images/Websites/ndtv.jpg" alt="NDTV"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="hindu_box" class="input" value='hindu'>
+                        <label for="hindu_box"><img src="images/Websites/hindu.jpg" alt="The Hindu"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <input type="checkbox" id="wion_box" class="input" value="wion">
+                        <label for="wion_box"><img src="images/Websites/wion.jpg" alt="WION"
+                                class="placeholder"></label>
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="coming_soon" class="placeholder">
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="coming_soon" class="placeholder">
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="coming_soon" class="placeholder">
+                    </div>
+                    <div class="boxes">
+                        <img src="images/Categories/coming_soon.jpg" alt="Economy" class="placeholder">
+                    </div>
+                </div>
+                <button type="button" onclick="mainpage()" class="selection_button"><i
+                        class="fa fa-long-arrow-right"></i></button>
+            </div>
+
+            <div class="main_page" id="main_page">
+                <div class="refresh_container">
+                    <div class="refresh">Refresh<button type="button" class="refresh_button" onclick="content()"><i
+                                class="fa fa-refresh" aria-hidden="true" style="cursor: pointer;"></i></button></div>
+                </div>
+            </div>
+            <div class="settings_page" id="settings_page">
+                <button type="button" class="settings_button" onclick="change()">Change Topics and Websites <i
+                        class="fa fa-long-arrow-right"></i></button>
+                <button type="button" class="settings_button" onclick="logout()">Logout <i
+                        class="fa fa-long-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="tab" id="tab">
+            <button class="tab_button" onclick="main_page_back()"><i class="fa fa-newspaper-o"></i> Main Feed</button>
+            <button class="tab_button" id="settings" onclick="settings()"><i class="fa fa-cog"></i> Settings</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        eel.expose(flip);
+        function flip() {
+            let element = document.getElementById("card");
+            element.classList.toggle("flip");
+        }
+        eel.expose(createjs);
+        async function createjs() {
+            let username = document.getElementById('create_username').value;
+            let password = document.getElementById('create_password').value;
+            let validated = await eel.create(username, password)();
+            if (validated == 1) {
+                document.getElementById("space").classList.add("reveal");
+                document.getElementById('categories').style.display = "block";
+                flip()
+                document.getElementById('container').classList.add('remove');
+            } else {
+                document.getElementById('incorrect_create').style.color = '#fff';
+                setTimeout(() => { document.getElementById('incorrect_create').style.color = 'rgba(255, 255, 255, 0)'; }, 5000);
+            }
+        }
+
+        eel.expose(next);
+        async function next() {
+            let checkboxes = document.querySelectorAll('#categories input:checked');
+            let topics = []
+            checkboxes.forEach((checkbox) => {
+                topics.push(checkbox.value);
+            });
+            let json_string = JSON.stringify(topics)
+            let n = await eel.update_data(json_string, "topics")();
+            document.getElementById('categories').style.display = "none";
+            document.getElementById("websites").style.display = "block";
+        }
+        eel.expose(mainpage);
+        async function mainpage() {
+            let checkboxes = document.querySelectorAll('#websites input:checked');
+            let websites = []
+            checkboxes.forEach((checkbox) => {
+                websites.push(checkbox.value);
+            });
+            let json_string = JSON.stringify(websites);
+            let n = await eel.update_data(json_string, "websites")();
+            document.getElementById('websites').style.display = "none";
+            document.getElementById('main_page').style.display = "block";
+            document.getElementById("space").classList.add("main");
+            document.getElementById("tab").style.display = "flex";
+            content()
+        }
+        eel.expose(loginjs);
+        async function loginjs() {
+            let username = document.getElementById("login_username").value;
+            let password = document.getElementById("login_password").value;
+            let validated = await eel.login(username, password)();
+            if (validated == 1) {
+                document.getElementById("space").classList.add("reveal");
+                document.getElementById('container').classList.add('remove');
+                document.getElementById('categories').style.display = "none";
+                document.getElementById("websites").style.display = "none";
+                document.getElementById('main_page').style.display = "block";
+                document.getElementById("space").classList.add("main");
+                document.getElementById("tab").style.display = "flex";
+                content()
+            } else {
+                document.getElementById('incorrect_login').style.color = '#fff';
+                setTimeout(() => { document.getElementById('incorrect_login').style.color = 'rgba(255, 255, 255, 0)'; }, 5000);
+
+            }
+        }
+        eel.expose(content);
+        async function content() {
+            document.querySelectorAll('.listing').forEach(e => e.remove());
+            let articles_json = await eel.content()();
+            let articles = JSON.parse(articles_json);
+            articles.forEach(ele_creation);
+        }
+        eel.expose(ele_creation);
+        async function ele_creation(value) {
+            let element = document.createElement("div");
+            element.classList.add('listing');
+            let head = document.createElement("div");
+            head.classList.add('head');
+            let title = document.createElement("span");
+            title.classList.add('art_title');
+            title.innerHTML = value['title'];
+            head.appendChild(title);
+            let outlet = document.createElement("span");
+            outlet.classList.add('art_outlet');
+            outlet.innerHTML = value['outlet'];
+            head.appendChild(outlet);
+            element.appendChild(head);
+            let content = document.createElement('div');
+            content.classList.add('content');
+            content.innerHTML = value['description'];
+            element.appendChild(content);
+            let link = document.createElement('a');
+            link.href = value['link'];
+            link.target = "_blank";
+            link.innerHTML = 'Read More';
+            link.classList.add('art_link');
+            element.appendChild(link);
+            document.getElementById('main_page').appendChild(element);
+        }
+        eel.expose(settings);
+        async function settings() {
+            document.getElementById('main_page').style.display = "none";
+            document.getElementById('settings_page').style.display = "block";
+        }
+        eel.expose(main_page_back);
+        async function main_page_back() {
+            content()
+            document.getElementById('main_page').style.display = "block";
+            document.getElementById('settings_page').style.display = "none";
+        }
+        eel.expose(change);
+        async function change() {
+            document.getElementById('settings_page').style.display = 'none';
+            document.getElementById('categories').style.display = "block";
+        }
+        eel.expose(logout);
+        async function logout() {
+            document.getElementById('settings_page').style.display = 'none';
+            document.getElementById("space").classList.remove('reveal');
+            document.getElementById("space").classList.remove("main");
+            document.getElementById("tab").style.display = "none";
+            document.getElementById('container').classList.remove('remove');
+
+
+        }
+    </script>
+</body>
+
+</html>
