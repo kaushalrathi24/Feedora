@@ -12,3 +12,6 @@ HTML/CSS/Javascript
 Snapshots:
 
 ![Alt text](Snapshots/main.png?raw=true "Main Page")
+![Alt text](Snapshots/login.png?raw=true "Main Page")
+![Alt text](Snapshots/category.png?raw=true "Main Page")
+![Alt text](Snapshots/website.png?raw=true "Main Page")
