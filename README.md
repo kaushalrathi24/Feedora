@@ -10,3 +10,5 @@ Frontend:
 HTML/CSS/Javascript
 
 Snapshots:
+
+![Alt text](.Snapshots/main.png?raw=true "Main Page")
